@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#071521" />
 
-  <title>JM Imóveis — Empreendimentos Exclusivos</title>
-  <meta name="description" content="Você já decidiu o nível. Agora escolha o endereço. Reserve Belo Horizonte • Maranville • Sávia." />
+  <title>Edson Nascimento imóveis de luxo</title>
+  <meta name="description" content="Você já decidiu o nível. Agora escolha o endereço. Reserve Belo Horizonte • Maranville • Savia." />
 
   <!-- Open Graph (WhatsApp thumbnail) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="JM Imóveis — Empreendimentos Exclusivos" />
+  <meta property="og:title" content="Edson Nascimento imóveis de luxo" />
   <meta property="og:description" content="Você já decidiu o nível. Agora escolha o endereço." />
   <!-- Para thumbnail funcionar 100%, og:image precisa ser URL ABSOLUTA do seu repo final -->
   <meta property="og:image" content="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg" />
@@ -18,7 +18,7 @@
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="JM Imóveis — Empreendimentos Exclusivos" />
+  <meta name="twitter:title" content="Edson Nascimento imóveis de luxo" />
   <meta name="twitter:description" content="Você já decidiu o nível. Agora escolha o endereço." />
   <meta name="twitter:image" content="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg" />
 
@@ -26,14 +26,12 @@
     :root{
       --bg0:#06111c;
       --bg1:#081826;
-      --card:rgba(255,255,255,.06);
       --stroke:rgba(255,255,255,.10);
       --txt:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.68);
 
-      /* azul escuro (no lugar do verde) */
+      /* azul escuro */
       --accent:#1f4f7a;
-      --accent2:#183f62;
 
       --shadow:0 18px 50px rgba(0,0,0,.45);
       --radius:22px;
@@ -56,8 +54,8 @@
 
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-
     .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 18px}
+
     .pill{
       display:inline-flex;align-items:center;gap:10px;
       padding:10px 14px;border:1px solid var(--stroke);
@@ -66,6 +64,7 @@
       font-weight:700;letter-spacing:.2px;font-size:12px
     }
     .dot{width:8px;height:8px;border-radius:99px;background:var(--accent);box-shadow:0 0 0 6px rgba(31,79,122,.18)}
+
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:14px 16px;border-radius:14px;border:1px solid var(--stroke);
@@ -98,11 +97,11 @@
     .brand{
       display:flex;align-items:center;gap:12px;font-weight:1000;letter-spacing:.2px
     }
-    .brand-mark{
-      width:34px;height:34px;border-radius:12px;
+    .brand-logo{
+      width:34px;height:34px;border-radius:10px;
       border:1px solid rgba(255,255,255,.12);
-      background:linear-gradient(180deg, rgba(31,79,122,.35), rgba(255,255,255,.02));
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      background:rgba(255,255,255,.04);
+      object-fit:contain;padding:6px;
     }
     .links{display:flex;gap:18px;align-items:center}
     .links a{
@@ -121,9 +120,7 @@
     }
 
     .hero{padding:28px 0 18px}
-    .hero-grid{
-      display:grid;grid-template-columns: 1.05fr .95fr;gap:18px;align-items:stretch
-    }
+    .hero-grid{display:grid;grid-template-columns: 1.05fr .95fr;gap:18px;align-items:stretch}
     @media (max-width:920px){.hero-grid{grid-template-columns:1fr;}}
     .panel{
       border:1px solid rgba(255,255,255,.10);
@@ -138,17 +135,17 @@
       font-size:44px;line-height:1.05;font-weight:1100;letter-spacing:-.8px
     }
     @media (max-width:520px){.h1{font-size:36px}}
+    .gold-title{
+      background:linear-gradient(180deg,#f6d48a,#caa85b);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
     .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .hero-right{
-      position:relative;min-height:320px
-    }
-    .hero-right img{
-      width:100%;height:100%;object-fit:cover;filter:saturate(1.02);
-      transform:scale(1.02)
-    }
+    .hero-right{position:relative;min-height:320px}
+    .hero-right img{width:100%;height:100%;object-fit:cover;filter:saturate(1.02);transform:scale(1.02)}
     .hero-right::after{
-      content:"";
-      position:absolute;inset:0;
+      content:"";position:absolute;inset:0;
       background:linear-gradient(120deg, rgba(6,17,28,.70), rgba(6,17,28,.18));
       pointer-events:none
     }
@@ -169,10 +166,9 @@
     .t h2{margin:0;font-size:22px;letter-spacing:-.2px}
     .t p{margin:0;color:var(--muted);font-weight:700}
 
-    .grid{
-      display:grid;grid-template-columns:repeat(3, 1fr);gap:14px
-    }
+    .grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px}
     @media (max-width:980px){.grid{grid-template-columns:1fr}}
+
     .card{
       border:1px solid rgba(255,255,255,.10);
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
@@ -183,8 +179,7 @@
     .card-top{position:relative;aspect-ratio: 16/9;overflow:hidden}
     .card-top img{width:100%;height:100%;object-fit:cover}
     .card-top::after{
-      content:"";
-      position:absolute;inset:0;
+      content:"";position:absolute;inset:0;
       background:linear-gradient(180deg, rgba(6,17,28,.10), rgba(6,17,28,.78));
     }
     .card-badge{
@@ -202,9 +197,7 @@
     .card-body p{margin:0 0 14px;color:var(--muted);line-height:1.65;font-weight:700}
     .card-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-    .split{
-      display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch
-    }
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
     @media (max-width:980px){.split{grid-template-columns:1fr}}
     .box{padding:18px}
     .brandrow{display:flex;align-items:center;gap:14px}
@@ -219,28 +212,19 @@
     .big{margin:6px 0 0;font-weight:1100;font-size:18px}
     .mini{margin:10px 0 0;color:var(--muted);font-weight:700;line-height:1.65}
 
-    .person{
-      display:grid;grid-template-columns:160px 1fr;gap:14px;align-items:center
-    }
+    .person{display:grid;grid-template-columns:160px 1fr;gap:14px;align-items:center}
     @media (max-width:560px){.person{grid-template-columns:1fr}}
 
-    /* Foto estilo autor (moldura circular) */
     .avatar{
-      width:160px;
-      height:160px;
-      border-radius:999px;
-      padding:6px;
+      width:160px;height:160px;border-radius:999px;padding:6px;
       border:1px solid rgba(206,170,96,.55);
       background:rgba(255,255,255,.04);
       box-shadow:0 18px 40px rgba(0,0,0,.35);
       overflow:hidden
     }
     .avatar img{
-      width:100%;
-      height:100%;
-      border-radius:999px;
-      object-fit:cover;
-      object-position:center top;
+      width:100%;height:100%;border-radius:999px;
+      object-fit:cover;object-position:center top;
     }
 
     footer{
@@ -248,9 +232,7 @@
       background:rgba(6,17,28,.45);
       padding:22px 0 26px
     }
-    .fg{
-      display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;align-items:start
-    }
+    .fg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;align-items:start}
     @media (max-width:900px){.fg{grid-template-columns:1fr}}
     .ft{font-weight:1100;margin:0 0 8px}
     .copy{margin-top:14px;color:rgba(255,255,255,.62);font-weight:700;font-size:12px}
@@ -273,7 +255,7 @@
     <div class="container">
       <div class="nav">
         <a class="brand" href="#top">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img class="brand-logo" src="imagens/jm-imoveis-logo.jpg" alt="JM Imóveis" decoding="async">
           <span>JM Imóveis</span>
         </a>
 
@@ -293,7 +275,11 @@
         <div class="hero-grid">
           <div class="panel hero-left">
             <span class="pill"><span class="dot"></span> Porta de entrada • Exclusividades</span>
-            <h1 class="h1">Você já decidiu o nível.<br>Agora escolha o endereço.</h1>
+
+            <h1 class="h1">
+              Você já decidiu o nível.<br>
+              <span class="gold-title">Agora escolha o endereço.</span>
+            </h1>
 
             <div class="hero-actions">
               <a class="btn btn-gold" href="#empreendimentos">Ver empreendimentos</a>
@@ -302,16 +288,11 @@
           </div>
 
           <div class="panel hero-right" aria-label="Imagem de destaque (hero)">
-            <img
-              src="imagens/hero-home.jpg"
-              alt="Imagem de destaque"
-              loading="eager"
-              decoding="async"
-            />
+            <img src="imagens/hero-home.jpg" alt="Imagem de destaque" loading="eager" decoding="async" />
             <div class="hero-badge">
               <div>
                 <strong>Seleção premium</strong><br>
-                <span>Reserve Belo Horizonte • Maranville • Sávia</span>
+                <span>Reserve Belo Horizonte • Maranville • Savia</span>
               </div>
               <a class="btn btn-gold" href="#empreendimentos">Escolher</a>
             </div>
@@ -330,64 +311,46 @@
         </div>
 
         <div class="grid">
-          <!-- Reserve Belo Horizonte -->
           <article class="card">
             <div class="card-top">
-              <img
-                src="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/imagens/hero.jpg"
-                alt="Reserve Belo Horizonte"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="card-badge"><span class="dot"></span> Bairro Planejado</div>
+              <img src="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/imagens/hero.jpg" alt="Reserve Belo Horizonte" loading="lazy" decoding="async" />
+              <div class="card-badge"><span class="dot"></span> Exclusivo</div>
             </div>
             <div class="card-body">
               <h3>Reserve Belo Horizonte</h3>
-              <p>O novo bairro planejado da Bravanti e do Grupo Sinop, com área verde preservada e lazer completo.</p>
+              <p>Acesse a página do empreendimento para ver detalhes, imagens e condições.</p>
               <div class="card-actions">
-                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/" target="_blank" rel="noopener noreferrer">Acessar página</a>
+                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/">Acessar página</a>
                 <a id="btnWhatsReserve" class="btn btn-glass" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
               </div>
             </div>
           </article>
 
-          <!-- Maranville -->
           <article class="card">
             <div class="card-top">
-              <img
-                src="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg"
-                alt="Condomínio Maranville"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg" alt="Condomínio Maranville" loading="lazy" decoding="async" />
               <div class="card-badge"><span class="dot"></span> Segurança • Lazer • Natureza</div>
             </div>
             <div class="card-body">
               <h3>Condomínio Maranville</h3>
               <p>Segurança, lazer e natureza no mesmo endereço, com 68 câmeras e ronda patrulhada para mais tranquilidade.</p>
               <div class="card-actions">
-                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/" target="_blank" rel="noopener noreferrer">Acessar página</a>
+                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/">Acessar página</a>
                 <a id="btnWhatsMaranville" class="btn btn-glass" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
               </div>
             </div>
           </article>
 
-          <!-- Sávia -->
           <article class="card">
             <div class="card-top">
-              <img
-                src="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/imagens/savia-hero.jpg"
-                alt="Sávia"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="card-badge"><span class="dot"></span> Alto Padrão</div>
+              <img src="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/imagens/savia-hero.jpg" alt="Savia" loading="lazy" decoding="async" />
+              <div class="card-badge"><span class="dot"></span> Exclusivo</div>
             </div>
             <div class="card-body">
-              <h3>Sávia</h3>
-              <p>Apartamentos de alto padrão com arquitetura elegante, acabamento premium e uma experiência de morar pensada para conforto.</p>
+              <h3>Savia</h3>
+              <p>Acesse a página do empreendimento para ver detalhes, imagens e condições.</p>
               <div class="card-actions">
-                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/" target="_blank" rel="noopener noreferrer">Acessar página</a>
+                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/">Acessar página</a>
                 <a id="btnWhatsSavia" class="btn btn-glass" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
               </div>
             </div>
@@ -408,6 +371,7 @@
                 <div class="k">Imobiliária</div>
                 <div class="big">JM Imóveis</div>
                 <p class="mini" style="margin-top:6px">Atendimento — JM Imóveis</p>
+                <p class="mini" style="margin-top:6px">Desde 2021 em Sinop–MT, a JM Imóveis atua no mercado imobiliário com corretagem, imóveis próprios e construção, oferecendo um caminho mais sólido para sua decisão.</p>
               </div>
             </div>
           </div>
@@ -450,7 +414,7 @@
       <div class="fg">
         <div>
           <div class="ft">JM Imóveis</div>
-          <p style="color:rgba(255,255,255,.72);line-height:1.7;margin:0;font-weight:700">Porta de entrada para os empreendimentos: Reserve Belo Horizonte, Maranville e Sávia.</p>
+          <p style="color:rgba(255,255,255,.72);line-height:1.7;margin:0;font-weight:700">Porta de entrada para os empreendimentos: Reserve Belo Horizonte, Maranville e Savia.</p>
           <p style="margin-top:10px;color:rgba(255,255,255,.86);font-weight:1000">adquira seu lote tão sonhado</p>
         </div>
         <div>
@@ -460,9 +424,9 @@
         <div>
           <div class="ft">Empreendimentos</div>
           <p style="margin:0;line-height:1.8">
-            <a href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/" target="_blank" rel="noopener noreferrer">Reserve BH</a><br>
-            <a href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/" target="_blank" rel="noopener noreferrer">Maranville</a><br>
-            <a href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/" target="_blank" rel="noopener noreferrer">Sávia</a>
+            <a href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/">Reserve BH</a><br>
+            <a href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/">Maranville</a><br>
+            <a href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/">Savia</a>
           </p>
         </div>
       </div>
@@ -473,25 +437,16 @@
   <a id="btnWhatsFloat" class="wa" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
   <script>
-    // WhatsApp (mensagens limpas: sem tags e sem links no texto)
     const WHATSAPP_NUMBER = "5565992332959";
 
     function waLink(msg){
-      const text = encodeURIComponent(msg);
-      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
 
-    const MSG_GERAL =
-      "Olá! Vi a página de empreendimentos da JM Imóveis. Pode me ajudar a escolher o melhor para mim?";
-
-    const MSG_RESERVE =
-      "Olá! Tenho interesse no Reserve Belo Horizonte. Pode me passar mais informações?";
-
-    const MSG_MARANVILLE =
-      "Olá! Tenho interesse no Condomínio Maranville. Pode me passar mais informações?";
-
-    const MSG_SAVIA =
-      "Olá! Tenho interesse no Sávia. Pode me passar mais informações?";
+    const MSG_GERAL = "Olá! Vi a página de empreendimentos da JM Imóveis. Pode me ajudar a escolher o melhor para mim?";
+    const MSG_RESERVE = "Olá! Tenho interesse no Reserve Belo Horizonte. Pode me passar mais informações?";
+    const MSG_MARANVILLE = "Olá! Tenho interesse no Condomínio Maranville. Pode me passar mais informações?";
+    const MSG_SAVIA = "Olá! Tenho interesse no Savia. Pode me passar mais informações?";
 
     const urlGeral = waLink(MSG_GERAL);
 

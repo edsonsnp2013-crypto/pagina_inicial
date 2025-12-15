@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#071521" />
+
+  <title>JM Imóveis — Empreendimentos Exclusivos</title>
+  <meta name="description" content="Você já decidiu o nível. Agora escolha o endereço. Reserve Belo Horizonte • Maranville • Sávia." />
+
+  <!-- Open Graph (WhatsApp thumbnail) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JM Imóveis — Empreendimentos Exclusivos" />
+  <meta property="og:description" content="Você já decidiu o nível. Agora escolha o endereço." />
+  <!-- Para thumbnail funcionar 100%, og:image precisa ser URL ABSOLUTA do seu repo final -->
+  <meta property="og:image" content="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="JM Imóveis — Empreendimentos Exclusivos" />
+  <meta name="twitter:description" content="Você já decidiu o nível. Agora escolha o endereço." />
+  <meta name="twitter:image" content="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg" />
+
+  <style>
+    :root{
+      --bg0:#06111c;
+      --bg1:#081826;
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.10);
+      --txt:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+
+      /* azul escuro (no lugar do verde) */
+      --accent:#1f4f7a;
+      --accent2:#183f62;
+
+      --shadow:0 18px 50px rgba(0,0,0,.45);
+      --radius:22px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--txt);
+      background:
+        radial-gradient(1200px 800px at 20% -20%, rgba(31,79,122,.25), transparent 60%),
+        radial-gradient(900px 700px at 110% 10%, rgba(31,79,122,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 18px}
+    .pill{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:10px 14px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      border-radius:999px;color:rgba(255,255,255,.78);
+      font-weight:700;letter-spacing:.2px;font-size:12px
+    }
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--accent);box-shadow:0 0 0 6px rgba(31,79,122,.18)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 16px;border-radius:14px;border:1px solid var(--stroke);
+      font-weight:900;letter-spacing:.2px;cursor:pointer;
+      transition:transform .12s ease, filter .12s ease, background .12s ease;
+      user-select:none;white-space:nowrap
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn:hover{filter:brightness(1.04)}
+    .btn-gold{
+      border:1px solid rgba(206,170,96,.45);
+      background:linear-gradient(180deg, #f6d48a, #caa85b);
+      color:#1a1207;
+      box-shadow:0 10px 30px rgba(202,168,91,.22);
+    }
+    .btn-glass{
+      background:rgba(255,255,255,.06);
+      color:rgba(255,255,255,.92)
+    }
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:linear-gradient(180deg, rgba(6,17,28,.92), rgba(6,17,28,.65));
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+    .nav{
+      height:74px;display:flex;align-items:center;justify-content:space-between;gap:12px
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:1000;letter-spacing:.2px
+    }
+    .brand-mark{
+      width:34px;height:34px;border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(180deg, rgba(31,79,122,.35), rgba(255,255,255,.02));
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .links{display:flex;gap:18px;align-items:center}
+    .links a{
+      color:rgba(255,255,255,.78);
+      font-weight:800;font-size:13px;
+      padding:10px 10px;border-radius:12px;
+      border:1px solid transparent
+    }
+    .links a:hover{border-color:rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:rgba(255,255,255,.92)}
+    .links .cta{display:none}
+    @media (max-width:840px){
+      .links{gap:8px}
+      .links a{font-size:12px;padding:10px 8px}
+      .links .hide-sm{display:none}
+      .links .cta{display:inline-flex}
+    }
+
+    .hero{padding:28px 0 18px}
+    .hero-grid{
+      display:grid;grid-template-columns: 1.05fr .95fr;gap:18px;align-items:stretch
+    }
+    @media (max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+    .panel{
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden
+    }
+    .hero-left{padding:26px}
+    .h1{
+      margin:12px 0 12px;
+      font-size:44px;line-height:1.05;font-weight:1100;letter-spacing:-.8px
+    }
+    @media (max-width:520px){.h1{font-size:36px}}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .hero-right{
+      position:relative;min-height:320px
+    }
+    .hero-right img{
+      width:100%;height:100%;object-fit:cover;filter:saturate(1.02);
+      transform:scale(1.02)
+    }
+    .hero-right::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(120deg, rgba(6,17,28,.70), rgba(6,17,28,.18));
+      pointer-events:none
+    }
+    .hero-badge{
+      position:absolute;left:16px;bottom:16px;right:16px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:14px 14px;border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(6,17,28,.58);
+      backdrop-filter: blur(10px);
+      z-index:2
+    }
+    .hero-badge strong{font-weight:1100}
+    .hero-badge span{color:rgba(255,255,255,.74);font-weight:800;font-size:13px}
+
+    .sec{padding:26px 0}
+    .t{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:14px}
+    .t h2{margin:0;font-size:22px;letter-spacing:-.2px}
+    .t p{margin:0;color:var(--muted);font-weight:700}
+
+    .grid{
+      display:grid;grid-template-columns:repeat(3, 1fr);gap:14px
+    }
+    @media (max-width:980px){.grid{grid-template-columns:1fr}}
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 16px 45px rgba(0,0,0,.35)
+    }
+    .card-top{position:relative;aspect-ratio: 16/9;overflow:hidden}
+    .card-top img{width:100%;height:100%;object-fit:cover}
+    .card-top::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(6,17,28,.10), rgba(6,17,28,.78));
+    }
+    .card-badge{
+      position:absolute;left:14px;top:14px;
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(6,17,28,.58);
+      backdrop-filter: blur(10px);
+      font-weight:1000;font-size:12px;letter-spacing:.3px;
+      z-index:2
+    }
+    .card-body{padding:16px}
+    .card-body h3{margin:0 0 8px;font-size:18px;letter-spacing:-.2px}
+    .card-body p{margin:0 0 14px;color:var(--muted);line-height:1.65;font-weight:700}
+    .card-actions{display:flex;gap:10px;flex-wrap:wrap}
+
+    .split{
+      display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch
+    }
+    @media (max-width:980px){.split{grid-template-columns:1fr}}
+    .box{padding:18px}
+    .brandrow{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:58px;height:58px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      overflow:hidden;flex:0 0 auto
+    }
+    .logo img{width:100%;height:100%;object-fit:contain;padding:10px}
+    .k{color:rgba(255,255,255,.78);font-weight:900;font-size:12px;letter-spacing:.3px;text-transform:uppercase}
+    .big{margin:6px 0 0;font-weight:1100;font-size:18px}
+    .mini{margin:10px 0 0;color:var(--muted);font-weight:700;line-height:1.65}
+
+    .person{
+      display:grid;grid-template-columns:160px 1fr;gap:14px;align-items:center
+    }
+    @media (max-width:560px){.person{grid-template-columns:1fr}}
+
+    /* Foto estilo autor (moldura circular) */
+    .avatar{
+      width:160px;
+      height:160px;
+      border-radius:999px;
+      padding:6px;
+      border:1px solid rgba(206,170,96,.55);
+      background:rgba(255,255,255,.04);
+      box-shadow:0 18px 40px rgba(0,0,0,.35);
+      overflow:hidden
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      border-radius:999px;
+      object-fit:cover;
+      object-position:center top;
+    }
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      background:rgba(6,17,28,.45);
+      padding:22px 0 26px
+    }
+    .fg{
+      display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;align-items:start
+    }
+    @media (max-width:900px){.fg{grid-template-columns:1fr}}
+    .ft{font-weight:1100;margin:0 0 8px}
+    .copy{margin-top:14px;color:rgba(255,255,255,.62);font-weight:700;font-size:12px}
+
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:60;
+      padding:14px 14px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(6,17,28,.70);
+      backdrop-filter: blur(10px);
+      box-shadow:0 16px 40px rgba(0,0,0,.35);
+      font-weight:1100
+    }
+    .wa:hover{filter:brightness(1.05)}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>JM Imóveis</span>
+        </a>
+
+        <nav class="links" aria-label="Navegação">
+          <a class="hide-sm" href="#empreendimentos">Empreendimentos</a>
+          <a class="hide-sm" href="#credibilidade">JM Imóveis</a>
+          <a class="hide-sm" href="#consultor">Consultor</a>
+          <a class="cta btn btn-gold" href="#empreendimentos">Ver agora</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="panel hero-left">
+            <span class="pill"><span class="dot"></span> Porta de entrada • Exclusividades</span>
+            <h1 class="h1">Você já decidiu o nível.<br>Agora escolha o endereço.</h1>
+
+            <div class="hero-actions">
+              <a class="btn btn-gold" href="#empreendimentos">Ver empreendimentos</a>
+              <a id="btnWhatsHero" class="btn btn-glass" href="#" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="panel hero-right" aria-label="Imagem de destaque (hero)">
+            <img
+              src="imagens/hero-home.jpg"
+              alt="Imagem de destaque"
+              loading="eager"
+              decoding="async"
+            />
+            <div class="hero-badge">
+              <div>
+                <strong>Seleção premium</strong><br>
+                <span>Reserve Belo Horizonte • Maranville • Sávia</span>
+              </div>
+              <a class="btn btn-gold" href="#empreendimentos">Escolher</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="empreendimentos" class="sec">
+      <div class="container">
+        <div class="t">
+          <div>
+            <h2>Empreendimentos</h2>
+            <p>Escolha e acesse a apresentação completa.</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Reserve Belo Horizonte -->
+          <article class="card">
+            <div class="card-top">
+              <img
+                src="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/imagens/hero.jpg"
+                alt="Reserve Belo Horizonte"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="card-badge"><span class="dot"></span> Bairro Planejado</div>
+            </div>
+            <div class="card-body">
+              <h3>Reserve Belo Horizonte</h3>
+              <p>O novo bairro planejado da Bravanti e do Grupo Sinop, com área verde preservada e lazer completo.</p>
+              <div class="card-actions">
+                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/" target="_blank" rel="noopener noreferrer">Acessar página</a>
+                <a id="btnWhatsReserve" class="btn btn-glass" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Maranville -->
+          <article class="card">
+            <div class="card-top">
+              <img
+                src="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg"
+                alt="Condomínio Maranville"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="card-badge"><span class="dot"></span> Segurança • Lazer • Natureza</div>
+            </div>
+            <div class="card-body">
+              <h3>Condomínio Maranville</h3>
+              <p>Segurança, lazer e natureza no mesmo endereço, com 68 câmeras e ronda patrulhada para mais tranquilidade.</p>
+              <div class="card-actions">
+                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/" target="_blank" rel="noopener noreferrer">Acessar página</a>
+                <a id="btnWhatsMaranville" class="btn btn-glass" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sávia -->
+          <article class="card">
+            <div class="card-top">
+              <img
+                src="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/imagens/savia-hero.jpg"
+                alt="Sávia"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="card-badge"><span class="dot"></span> Alto Padrão</div>
+            </div>
+            <div class="card-body">
+              <h3>Sávia</h3>
+              <p>Apartamentos de alto padrão com arquitetura elegante, acabamento premium e uma experiência de morar pensada para conforto.</p>
+              <div class="card-actions">
+                <a class="btn btn-gold" href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/" target="_blank" rel="noopener noreferrer">Acessar página</a>
+                <a id="btnWhatsSavia" class="btn btn-glass" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="credibilidade" class="sec">
+      <div class="container">
+        <div class="split">
+          <div class="panel box">
+            <div class="brandrow">
+              <div class="logo" aria-label="Logo JM Imóveis">
+                <img src="imagens/jm-imoveis-logo.jpg" alt="JM Imóveis" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <div class="k">Imobiliária</div>
+                <div class="big">JM Imóveis</div>
+                <p class="mini" style="margin-top:6px">Atendimento — JM Imóveis</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel box">
+            <div class="k">Contato direto</div>
+            <div class="big">Fale com a gente quando quiser</div>
+            <p class="mini">Clique no WhatsApp e solicite a apresentação do empreendimento que você escolher.</p>
+            <div class="hero-actions" style="margin-top:12px">
+              <a id="btnWhatsCred" class="btn btn-gold" href="#" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultor" class="sec">
+      <div class="container">
+        <div class="panel box">
+          <div class="person">
+            <div class="avatar" aria-label="Foto do consultor">
+              <img src="imagens/edson.jpg" alt="Consultor imobiliário Edson Nascimento" loading="lazy" decoding="async" />
+            </div>
+            <div>
+              <div class="k">Consultor imobiliário</div>
+              <div class="big">Edson Nascimento</div>
+              <p class="mini" style="margin-top:10px">Mais do que vender, eu crio valor. Assessoria completa para quem busca exclusividade, rentabilidade e as melhores oportunidades.</p>
+              <div class="hero-actions" style="margin-top:12px">
+                <a id="btnWhatsEdson" class="btn btn-gold" href="#" target="_blank" rel="noopener noreferrer">Falar com Edson</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="container">
+      <div class="fg">
+        <div>
+          <div class="ft">JM Imóveis</div>
+          <p style="color:rgba(255,255,255,.72);line-height:1.7;margin:0;font-weight:700">Porta de entrada para os empreendimentos: Reserve Belo Horizonte, Maranville e Sávia.</p>
+          <p style="margin-top:10px;color:rgba(255,255,255,.86);font-weight:1000">adquira seu lote tão sonhado</p>
+        </div>
+        <div>
+          <div class="ft">WhatsApp</div>
+          <p style="margin:0"><a id="btnWhatsFooter" href="#" target="_blank" rel="noopener noreferrer">Abrir conversa</a></p>
+        </div>
+        <div>
+          <div class="ft">Empreendimentos</div>
+          <p style="margin:0;line-height:1.8">
+            <a href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/" target="_blank" rel="noopener noreferrer">Reserve BH</a><br>
+            <a href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/" target="_blank" rel="noopener noreferrer">Maranville</a><br>
+            <a href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/" target="_blank" rel="noopener noreferrer">Sávia</a>
+          </p>
+        </div>
+      </div>
+      <div class="copy">© 2025 JM Imóveis. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <a id="btnWhatsFloat" class="wa" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+  <script>
+    // WhatsApp (mensagens limpas: sem tags e sem links no texto)
+    const WHATSAPP_NUMBER = "5565992332959";
+
+    function waLink(msg){
+      const text = encodeURIComponent(msg);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+
+    const MSG_GERAL =
+      "Olá! Vi a página de empreendimentos da JM Imóveis. Pode me ajudar a escolher o melhor para mim?";
+
+    const MSG_RESERVE =
+      "Olá! Tenho interesse no Reserve Belo Horizonte. Pode me passar mais informações?";
+
+    const MSG_MARANVILLE =
+      "Olá! Tenho interesse no Condomínio Maranville. Pode me passar mais informações?";
+
+    const MSG_SAVIA =
+      "Olá! Tenho interesse no Sávia. Pode me passar mais informações?";
+
+    const urlGeral = waLink(MSG_GERAL);
+
+    document.getElementById("btnWhatsHero").href = urlGeral;
+    document.getElementById("btnWhatsCred").href = urlGeral;
+    document.getElementById("btnWhatsEdson").href = urlGeral;
+    document.getElementById("btnWhatsFooter").href = urlGeral;
+    document.getElementById("btnWhatsFloat").href = urlGeral;
+
+    document.getElementById("btnWhatsReserve").href = waLink(MSG_RESERVE);
+    document.getElementById("btnWhatsMaranville").href = waLink(MSG_MARANVILLE);
+    document.getElementById("btnWhatsSavia").href = waLink(MSG_SAVIA);
+  </script>
+</body>
+</html>

@@ -203,6 +203,10 @@
       overflow:hidden;
       box-shadow:0 16px 45px rgba(0,0,0,.35)
     }
+
+    /* Card inteiro clicável */
+    .card[data-href]{cursor:pointer}
+
     .card-top{position:relative;aspect-ratio: 16/9;overflow:hidden}
     .card-top img{width:100%;height:100%;object-fit:cover}
     .card-top::after{
@@ -341,7 +345,7 @@
 
         <div class="grid">
           <!-- Reserve Belo Horizonte -->
-          <article class="card">
+          <article class="card" data-href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/">
             <a class="card-coverLink" href="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/">
               <div class="card-top">
                 <img src="https://edsonsnp2013-crypto.github.io/reserve.BHexclusivo/imagens/hero.jpg" alt="Reserve Belo Horizonte" loading="lazy" decoding="async" />
@@ -359,7 +363,7 @@
           </article>
 
           <!-- Maranville -->
-          <article class="card">
+          <article class="card" data-href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/">
             <a class="card-coverLink" href="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/">
               <div class="card-top">
                 <img src="https://edsonsnp2013-crypto.github.io/maranvilleexclusivo/imagens/hero.jpg" alt="Condomínio Maranville" loading="lazy" decoding="async" />
@@ -377,7 +381,7 @@
           </article>
 
           <!-- Savia -->
-          <article class="card">
+          <article class="card" data-href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/">
             <a class="card-coverLink" href="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/">
               <div class="card-top">
                 <img src="https://edsonsnp2013-crypto.github.io/Savia.exclusividade/imagens/savia-hero.jpg" alt="Savia" loading="lazy" decoding="async" />
@@ -493,6 +497,20 @@
     document.getElementById("btnWhatsReserve").href = waLink(MSG_RESERVE);
     document.getElementById("btnWhatsMaranville").href = waLink(MSG_MARANVILLE);
     document.getElementById("btnWhatsSavia").href = waLink(MSG_SAVIA);
+
+    // Card inteiro clicável (exceto WhatsApp)
+    document.querySelectorAll('.card[data-href]').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.btn-whats')) return;
+        const href = card.getAttribute('data-href');
+        if (href) window.location.href = href;
+      });
+    });
+
+    // Impede o clique do WhatsApp "vazar" pro card
+    document.querySelectorAll('.btn-whats').forEach(btn => {
+      btn.addEventListener('click', (e) => e.stopPropagation());
+    });
   </script>
 </body>
 </html>

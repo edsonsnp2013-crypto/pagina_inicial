@@ -357,7 +357,7 @@
               </h3>
               <p>Planejamento, lazer e natureza no mesmo projeto. Um bairro feito para viver bem e valorizar com o tempo.</p>
               <div class="card-actions">
-                <a id="btnWhatsReserve" class="btn btn-whats" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <span class="k">Saiba mais</span>
               </div>
             </div>
           </article>
@@ -375,7 +375,7 @@
               </h3>
               <p>Segurança, lazer e natureza no mesmo endereço. 68 câmeras e ronda patrulhada para mais tranquilidade.</p>
               <div class="card-actions">
-                <a id="btnWhatsMaranville" class="btn btn-whats" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <span class="k">Saiba mais</span>
               </div>
             </div>
           </article>
@@ -393,7 +393,7 @@
               </h3>
               <p>Arquitetura elegante e acabamento premium. Uma experiência de morar com conforto, privacidade e valorização.</p>
               <div class="card-actions">
-                <a id="btnWhatsSavia" class="btn btn-whats" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <span class="k">Saiba mais</span>
               </div>
             </div>
           </article>
@@ -482,10 +482,6 @@
     }
 
     const MSG_GERAL = "Olá! Vi a página de empreendimentos da JM Imóveis. Pode me ajudar a escolher o melhor para mim?";
-    const MSG_RESERVE = "Olá! Tenho interesse no Reserve Belo Horizonte. Pode me passar mais informações?";
-    const MSG_MARANVILLE = "Olá! Tenho interesse no Condomínio Maranville. Pode me passar mais informações?";
-    const MSG_SAVIA = "Olá! Tenho interesse no Savia. Pode me passar mais informações?";
-
     const urlGeral = waLink(MSG_GERAL);
 
     document.getElementById("btnWhatsHero").href = urlGeral;
@@ -494,22 +490,12 @@
     document.getElementById("btnWhatsFooter").href = urlGeral;
     document.getElementById("btnWhatsFloat").href = urlGeral;
 
-    document.getElementById("btnWhatsReserve").href = waLink(MSG_RESERVE);
-    document.getElementById("btnWhatsMaranville").href = waLink(MSG_MARANVILLE);
-    document.getElementById("btnWhatsSavia").href = waLink(MSG_SAVIA);
-
-    // Card inteiro clicável (exceto WhatsApp)
+    // Card inteiro clicável
     document.querySelectorAll('.card[data-href]').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('.btn-whats')) return;
+      card.addEventListener('click', () => {
         const href = card.getAttribute('data-href');
         if (href) window.location.href = href;
       });
-    });
-
-    // Impede o clique do WhatsApp "vazar" pro card
-    document.querySelectorAll('.btn-whats').forEach(btn => {
-      btn.addEventListener('click', (e) => e.stopPropagation());
     });
   </script>
 </body>
